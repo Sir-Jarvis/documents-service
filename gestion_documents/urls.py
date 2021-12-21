@@ -14,7 +14,7 @@ urlpatterns = [
         description="API pour gestion des documents",
         version="1.0.0"
     ), name="documents-schema"),
-    path('', include_docs_urls(
+    path('apidocs', include_docs_urls(
         title="DocumentAPI",
         description="API pour gestion des documents",
     ), name="documents-docs")
