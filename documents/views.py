@@ -10,18 +10,13 @@ from django.http import JsonResponse
 from .serializers import DocumentSerializer
 
 
-@permission_classes((permissions.AllowAny,))
-class DocumentAPIView(APIView):
+# @permission_classes((permissions.AllowAny,))
+# class DocumentAPIView(APIView):
 
-    def get(self, request, format=None):
-        documents = Document.objects.all()
-        serializer = DocumentSerializer(documents,many=True)
-
-        return Response(serializer.data)
-
-
-
-
+#     def get(self, request,*args, **kwargs):
+#         documents = Document.objects.all()
+#         serializer = DocumentSerializer(documents,many=True, context={"request": request})
+#         return Response(serializer.data)
 
 @permission_classes((permissions.AllowAny,))
 class FileUploadView(APIView):
